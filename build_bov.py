@@ -274,9 +274,9 @@ NON_TAX_CUR_EXP = 86530  # Total OpEx $103,572 - Property Tax $17,042
 NON_TAX_PF_EXP = 89785  # PF OpEx $106,827 - PF Property Tax $17,042
 
 # Financing
-INTEREST_RATE = 0.065
+INTEREST_RATE = 0.06  # 5yr Treasury 4.01% + 200bps bank spread (3/20/2026)
 AMORTIZATION_YEARS = 30
-MAX_LTV = 0.65
+MAX_LTV = 0.55  # Backed into from DSCR 1.25x at 6.00% rate, rounded down to nearest 5%
 MIN_DCR = 1.25
 
 # Trade range
