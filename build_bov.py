@@ -149,14 +149,14 @@ COMP_ADDRESSES = {
     "14218 Victory Blvd, Van Nuys, CA 91401": None,
 }
 RENT_COMP_ADDRESSES = {
-    "14839 Sherman Way, Van Nuys, CA": None,
-    "7422 Hazeltine Ave, Van Nuys, CA": None,
-    "5821 Sylmar Ave, Van Nuys, CA": None,
-    "6716 Sylmar Ave, Van Nuys, CA": None,
-    "7453 Haskell Ave, Van Nuys, CA": None,
-    "15114 Sherman Way, Van Nuys, CA": None,
-    "13959 Victory Blvd, Van Nuys, CA": None,
-    "7035 Woodley Ave, Van Nuys, CA": None,
+    "14839 Sherman Way #6, Van Nuys": None,
+    "7422 Hazeltine Ave #8, Van Nuys": None,
+    "5821 Sylmar Ave #2, Van Nuys": None,
+    "6716 Sylmar Ave #204, Van Nuys": None,
+    "7453 Haskell Ave #7, Van Nuys": None,
+    "15114 Sherman Way #106, Van Nuys": None,
+    "13959 Victory Blvd #3, Van Nuys": None,
+    "7035 Woodley Ave #105, Van Nuys": None,
 }
 for addr in COMP_ADDRESSES:
     COMP_ADDRESSES[addr] = geocode_census(addr)
@@ -530,7 +530,7 @@ COMP_NARRATIVES = """
 
 ON_MARKET_NARRATIVE = "Three active listings provide competitive context. 7437 Haskell Ave (10 units, 1987) is listed at $289,500/unit -- a smaller, all-1BR building that represents a different buyer pool. 13430 Victory Blvd (10 units, 2003) is listed at $295,000/unit with rents deeply below market ($1,750 actual vs $2,750 projected), positioning it as a heavy value-add play. The most instructive listing is 14218 Victory Blvd (8 units, 1988) at $447,375/unit -- a fully renovated townhome property nearly identical in vintage and unit style to the subject, with tenant-paid utilities and in-unit washer/dryers. The Victory Blvd listing represents the ceiling for what the Berkus property could achieve post-renovation, while the subject at $291,667/unit offers buyers significant margin to capture that upside."
 
-PRICING_RATIONALE = "Our suggested list price of $4,375,000 ($291,667/unit) is anchored by three primary comparable sales -- 6716 Sylmar Ave (LAAA Team sale), 6451 Kester Ave, and 16731 Sherman Way -- which, after adjustments for size, parking type, pool, and townhome premium, indicate a Tier 1 weighted average of $293,480/unit. The subject at $291,667/unit is positioned marginally below this weighted average, reflecting appropriate market entry pricing for a first-time offering. The $/unit method, weighted at 35% of the reconciliation, produces $4.38M. Cap rate analysis at 5.75% (tax-adjusted) produces $4.03M after Prop 13 reassessment, and the GRM method at 11.0x produces $4.11M. The four-method weighted average of $4.31M supports the recommended price. The most recent transaction, 14121 Friar St (December 2025, $292,857/unit), confirms current buyer appetite at this price point. 6451 Kester Ave (July 2025, $334,286/unit) demonstrates that premium 1980s-vintage 2BR product in Van Nuys trades well above the subject's list price, even after discounting for its subterranean parking. Based on 8 comparable sales spanning May 2025 through January 2026, with 3 primary comps requiring minimal adjustments, we have moderate confidence in a trade range of $4.2M to $4.5M ($280,000 to $300,000/unit). The 21.7% rent upside from current to pro forma GSR, non-RSO status, and townhome product type position this property to attract competitive buyer interest at or above the list price."
+PRICING_RATIONALE = "Our suggested list price of $4,375,000 ($291,667/unit) is anchored by three primary comparable sales -- 6716 Sylmar Ave (LAAA Team sale), 6451 Kester Ave, and 16731 Sherman Way -- which, after adjustments for size, parking type, pool, and townhome premium, indicate a Tier 1 weighted average of $293,480/unit. The subject at $291,667/unit is positioned marginally below this weighted average, reflecting appropriate market entry pricing for a first-time offering. The $/unit method, weighted at 35% of the reconciliation, produces $4.38M. Cap rate analysis at 5.75% (tax-adjusted) produces $4.03M after Prop 13 reassessment, and the GRM method at 11.0x produces $4.11M. The four-method weighted average of $4.31M supports the recommended price. The most recent transaction, 14121 Friar St (December 2025, $292,857/unit), confirms current buyer appetite at this price point. 6451 Kester Ave (July 2025, $334,286/unit) demonstrates that premium 1980s-vintage 2BR product in Van Nuys trades well above the subject's list price, even after discounting for its subterranean parking. Based on 8 comparable sales spanning May 2025 through January 2026, with 3 primary comps requiring minimal adjustments, we support a trade range of $4.2M to $4.5M ($280,000 to $300,000/unit). The 21.7% rent upside from current to pro forma GSR, non-RSO status, and townhome product type position this property to attract competitive buyer interest at or above the list price."
 
 COMP_CONFIDENCE = "MODERATE"
 
@@ -778,7 +778,7 @@ eri = GSR - vacancy_amt
 os_income_html += f'<tr><td>Gross Scheduled Rent</td><td class="num">${GSR:,.0f}</td><td class="num">${GSR/UNITS:,.0f}</td><td class="num">${GSR/SF:.2f}</td><td class="num"> - </td></tr>\n'
 os_income_html += f'<tr><td>Less: Vacancy ({VACANCY_PCT*100:.0f}%)</td><td class="num">$({vacancy_amt:,.0f})</td><td class="num">$({vacancy_amt/UNITS:,.0f})</td><td class="num">$({vacancy_amt/SF:.2f})</td><td class="num"> - </td></tr>\n'
 if OTHER_INCOME > 0:
-    os_income_html += f'<tr><td>Other Income <span class="note-ref">[1]</span></td><td class="num">${OTHER_INCOME:,.0f}</td><td class="num">${OTHER_INCOME/UNITS:,.0f}</td><td class="num">${OTHER_INCOME/SF:.2f}</td><td class="num"> - </td></tr>\n'
+    os_income_html += f'<tr><td>Other Income <span class="note-ref">[*]</span></td><td class="num">${OTHER_INCOME:,.0f}</td><td class="num">${OTHER_INCOME/UNITS:,.0f}</td><td class="num">${OTHER_INCOME/SF:.2f}</td><td class="num"> - </td></tr>\n'
 os_income_html += f'<tr class="summary"><td><strong>Effective Gross Income</strong></td><td class="num"><strong>${CUR_EGI:,.0f}</strong></td><td class="num"><strong>${CUR_EGI/UNITS:,.0f}</strong></td><td class="num"><strong>${CUR_EGI/SF:.2f}</strong></td><td class="num"><strong>100.0%</strong></td></tr>\n'
 
 os_expense_html = ""
@@ -1943,7 +1943,7 @@ html_parts.append(f"""
       <div class="summary-trade-prices">${TRADE_RANGE_LOW:,} &mdash; ${TRADE_RANGE_HIGH:,}</div>
     </div>
     <h3 class="sub-heading">Pricing Rationale</h3>
-    <div style="margin-bottom:8px;"><span style="display:inline-block;padding:3px 10px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:0.5px;color:#fff;background:{'#2E7D32' if COMP_CONFIDENCE == 'HIGH' else '#E65100' if COMP_CONFIDENCE == 'LOW' else '#1565C0'};">{COMP_CONFIDENCE} CONFIDENCE</span> <span style="font-size:11px;color:#666;">Based on comparable sales analysis</span></div>
+    <!-- Confidence badge removed per Glen's direction -->
     <p>{PRICING_RATIONALE}</p>
     <div class="condition-note"><strong>Assumptions &amp; Conditions:</strong> {ASSUMPTIONS_DISCLAIMER}</div>
   </div>
